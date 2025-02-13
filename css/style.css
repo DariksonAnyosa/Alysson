@@ -1,0 +1,446 @@
+/* RESET Y CONFIGURACIÓN GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Degradado San Valentín: rosado a rojo */
+  background: linear-gradient(135deg, #FF6F91 0%, #ed7794 0%);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  background: url('/images/fondo.jpeg') center center / cover no-repeat;
+  opacity: 0.1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 0;
+}
+
+/* SECCIONES */
+.section {
+  min-height: 100vh;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  position: relative;
+  padding: 60px 20px;
+}
+.section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------------
+   SECCIÓN BIENVENIDA
+-------------------------------------- */
+#section-bienvenida {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: url('images/fondo.jpeg') center center / cover no-repeat;
+}
+#section-bienvenida::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+#section-bienvenida .container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+}
+#section-bienvenida h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+.typewriter-container {
+  width: 600px;
+  margin: 0 auto 30px;
+  text-align: center;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  display: inline-block;
+}
+.subtitle-typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  animation: typing 3s steps(60, end) 0.5s forwards,
+             blink 0.75s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.final-thanks {
+  font-size: 2rem;
+  color: #fff;
+  animation: pulse 2s infinite;
+  margin-top: 30px;
+}
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* -------------------------------------
+   BOTONES
+-------------------------------------- */
+.btn {
+  background-color: #D4AF37;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+}
+.btn:hover {
+  background-color: #b9952f;
+  transform: scale(1.05);
+}
+.fechas-subtitle {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #ffe4e4;
+  font-style: italic;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -------------------------------------
+   POPUP
+-------------------------------------- */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  display: none;
+}
+.popup img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* -------------------------------------
+   CARRUSEL (Fechas Especiales)
+-------------------------------------- */
+.carousel {
+  position: relative;
+  margin: 40px auto;
+  max-width: 600px;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.carousel-slide img {
+  max-height: 400px;
+  width: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.carousel-slide img:hover {
+  transform: scale(1.05);
+}
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(212, 175, 55, 0.8);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+.carousel-button:hover {
+  background-color: rgba(185, 149, 47, 0.8);
+}
+.carousel-button-left {
+  left: 10px;
+}
+.carousel-button-right {
+  right: 10px;
+}
+.carousel-nav {
+  text-align: center;
+  margin-top: 15px;
+}
+.carousel-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #D4AF37;
+  border-radius: 50%;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0.5;
+}
+.carousel-indicator.current-slide {
+  opacity: 1;
+  background-color: #b9952f;
+}
+
+/* -------------------------------------
+   GALERÍA (Recuerdos del Día a Día)
+-------------------------------------- */
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin: 40px 0;
+}
+.grid-item {
+  position: relative;
+  width: 250px;
+  margin: 10px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transform: rotate(-3deg);
+  transition: transform 0.3s;
+}
+.grid-item:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.grid-item img:hover {
+  transform: scale(1.05);
+}
+
+/* -------------------------------------
+   CORAZONES FLOTANDO (Sección Final)
+-------------------------------------- */
+.hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.heart {
+  position: absolute;
+  color: #D4AF37;
+  font-size: 2rem;
+  animation: float 4s infinite ease-in-out;
+  opacity: 0.8;
+}
+.heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { top: 40%; left: 70%; animation-delay: 1s; }
+.heart:nth-child(3) { top: 60%; left: 30%; animation-delay: 2s; }
+@keyframes float {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-20px) scale(1.2); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* -------------------------------------
+   MODAL "PIRATE TREASURE" PARA EL SOMBRERO
+-------------------------------------- */
+.pirate-modal {
+  text-align: center;
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+.pirate-modal-content {
+  background: #fff;
+  color: #000;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+}
+/* Asegura que las imágenes dentro del modal se centren */
+.pirate-modal-content img {
+  display: block;
+  margin: 0 auto 20px auto; /* margin inferior de 20px */
+}
+
+/* Si quieres un tamaño fijo para la foto final */
+#pirate-final-photo {
+  max-width: 250px; /* Ajusta según prefieras */
+  margin-top: 10px; /* Separación arriba */
+}
+
+.pirate-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.pirate-treasure {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+.pirate-modal-content h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+  color: #D4AF37;
+}
+.pirate-modal-content p {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* -------------------------------------
+   MODAL "PIRATE TREASURE" Paso 2, con foto final
+-------------------------------------- */
+#pirate-final-photo {
+  display: none;
+  margin-top: 20px;
+  max-width: 200px;
+}
+
+/* -------------------------------------
+   ICONO DEL SOMBRERO DE LUFFY
+-------------------------------------- */
+#luffy-hat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 10000; /* Aumentamos el z-index para asegurar visibilidad */
+}
+#luffy-hat img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+#luffy-hat:hover {
+  transform: scale(1.1);
+}
+
+/* -------------------------------------
+   CONTENEDOR DE CORAZONES FLOTANTES (Bienvenida)
+-------------------------------------- */
+.floating-hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.floating-heart {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #ffb3b3;
+  mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="%23fff" d="M256 469.3l-29.2-27.3C114.6 324.3 48 263.8 48 179.8 48 108.1 108.1 48 179.8 48c41.5 0 81 19.3 106.2 50 25.2-30.7 64.7-50 106.2-50 71.7 0 131.8 60.1 131.8 131.8 0 84-66.6 144.5-178.8 262.2L256 469.3z"/></svg>') center/contain no-repeat;
+  opacity: 0.8;
+  animation: floatHearts 6s infinite ease-in-out;
+}
+.floating-heart:nth-child(1) { left: 20%; width: 20px; height: 20px; animation-duration: 5s; }
+.floating-heart:nth-child(2) { left: 70%; animation-duration: 7s; animation-delay: 1s; opacity: 0.6; }
+.floating-heart:nth-child(3) { left: 40%; width: 25px; height: 25px; animation-duration: 5.5s; opacity: 0.7; }
+.floating-heart:nth-child(4) { left: 80%; width: 35px; height: 35px; animation-duration: 6.5s; animation-delay: 2s; }
+.floating-heart:nth-child(5) { left: 10%; width: 40px; height: 40px; animation-duration: 7.5s; animation-delay: 1.5s; }
+.floating-heart:nth-child(6) { left: 60%; width: 30px; height: 30px; animation-duration: 5.5s; animation-delay: 3s; }
+@keyframes floatHearts {
+  0% { transform: translate(-50%, 0) rotate(0deg); bottom: -10%; opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translate(-50%, -50%) rotate(45deg); }
+  100% { transform: translate(-50%, -100%) rotate(90deg); bottom: 110%; opacity: 0; }
+}

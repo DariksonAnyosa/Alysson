@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuestro Viaje Juntos</title>
+  <!-- Enlace a la hoja de estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Audio: se reproducirá automáticamente -->
+  <audio id="myAudio" src="audio/one-piece_opening-1-we-are.mp3" autoplay loop></audio>
+  <!-- Botón de Play Music (se mostrará si el autoplay es bloqueado) -->
+  <button id="btnPlayAudio" class="btn" style="display: none;">Play Music</button>
+
+  <!-- SECCIÓN 1: Bienvenida -->
+  <section id="section-bienvenida" class="section active animate-fade-in">
+    <div class="container">
+      <h1>Bienvenida, Alysson</h1>
+      <!-- Contenedor para el texto typewriter -->
+      <div class="typewriter-container">
+        <p class="subtitle-typewriter">
+          Hoy no es solo el 14, es un día más en nuestro viaje juntos.
+        </p>
+        <div class="final-thanks">Gracias, Alysson</div>
+      </div>
+      <button id="btn-empezar" class="btn">Empezar nuestro viaje</button>
+      <div class="floating-hearts-container">
+        <span class="floating-heart"></span>
+        <span class="floating-heart"></span>
+        <span class="floating-heart"></span>
+        <span class="floating-heart"></span>
+        <span class="floating-heart"></span>
+        <span class="floating-heart"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: Fechas Especiales -->
+  <section id="section-fechas" class="section animate-fade-in">
+    <div class="container">
+      <h2>Fechas Especiales</h2>
+      <p class="fechas-subtitle">
+        Cada una de estas fechas marcó un antes y un después en nuestra historia. Gracias por cada instante, Alysson.
+      </p>
+      <div class="carousel">
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li class="carousel-slide">
+              <img src="images/primer-viaje.jpeg" alt="Primer viaje a Lima" 
+                   data-message="Nuestro primer viaje juntos a Lima, visitando el Parque de las Aguas. Ver las fuentes iluminadas fue tan mágico como tu sonrisa.">
+              <div class="caption">Parque de las Aguas, Lima</div>
+            </li>
+            <li class="carousel-slide">
+              <img src="images/primer-concierto.jpeg" alt="Primer concierto: Duki" 
+                   data-message="Nuestro primer concierto juntos, con Duki. La música y tu risa crearon un ambiente inolvidable.">
+              <div class="caption">Primer Concierto, Duki</div>
+            </li>
+            <li class="carousel-slide">
+              <img src="images/paseo-quillo.jpeg" alt="Paseo en Quillo" 
+                   data-message="Ese día quise sorprenderte y paseamos en Quillo. Cada paso contigo fue un nuevo descubrimiento.">
+              <div class="caption">Paseo en Quillo</div>
+            </li>
+            <li class="carousel-slide">
+              <img src="images/primer-aniversario.jpeg" alt="Primer aniversario en el Mirador" 
+                   data-message="Nuestro primer aniversario, celebrando en el Mirador. La pasé lo mejor contigo.">
+              <div class="caption">Primer Aniversario, Mirador</div>
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-button carousel-button-left">&#10094;</button>
+        <button class="carousel-button carousel-button-right">&#10095;</button>
+        <div class="carousel-nav">
+          <button class="carousel-indicator current-slide"></button>
+          <button class="carousel-indicator"></button>
+          <button class="carousel-indicator"></button>
+          <button class="carousel-indicator"></button>
+        </div>
+      </div>
+      <button id="btn-fechas-siguiente" class="btn">Siguiente</button>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: Recuerdos del Día a Día -->
+  <section id="section-diario" class="section animate-fade-in">
+    <div class="container">
+      <h2>Recuerdos del Día a Día</h2>
+      <div class="grid-gallery">
+        <div class="grid-item">
+          <img src="images/dia1.jpeg" alt="Recuerdo cotidiano 1" data-message="Recordando desde ese día, no soltaste ese peluche que tanto te quería regalar.">
+        </div>
+        <div class="grid-item">
+          <img src="images/dia2.jpeg" alt="Recuerdo cotidiano 2" data-message="Una tarde llena de risas. Recuerdo que caminamos por la playa.">
+        </div>
+        <div class="grid-item">
+          <img src="images/dia3.jpeg" alt="Recuerdo cotidiano 3" data-message="Momentos espontáneos que hacen la diferencia.">
+        </div>
+        <div class="grid-item">
+          <img src="images/dia4.jpeg" alt="Recuerdo cotidiano 4" data-message="Cada día contigo es una aventura única.">
+        </div>
+      </div>
+      <button id="btn-diario-siguiente" class="btn">Siguiente</button>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: Tus Sueños -->
+  <section id="section-suenos" class="section animate-fade-in">
+    <div class="container">
+      <h2>Tu Futuro Brillante</h2>
+      <p>
+        Sé que este año será tu año. Serás profesora, y sé que tendrás ese colegio que tanto sueñas.<br>
+        Serás una gran directora, y yo estaré ahí para verte lograrlo.
+      </p>
+      <button id="btn-suenos-siguiente" class="btn">Un mensaje final para ti</button>
+    </div>
+    <div class="dream-quote">
+      <p>"La educación no cambia el mundo: cambia a las personas que van a cambiar el mundo."</p>
+      <small>– Paulo Freire</small>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: Mensaje Final -->
+  <section id="section-final" class="section animate-fade-in">
+    <div class="container">
+      <h2>No hace falta sentido 14…</h2>
+      <p>…porque cada día contigo ya tiene sentido.</p>
+      <button id="btn-reiniciar" class="btn">Gracias por ser parte de este viaje</button>
+    </div>
+    <div class="hearts">
+      <span class="heart">&#10084;</span>
+      <span class="heart">&#10084;</span>
+      <span class="heart">&#10084;</span>
+    </div>
+  </section>
+
+  <!-- Popup para ampliar imágenes -->
+  <div id="popup" class="popup">
+    <span id="close-popup" class="popup-close">&times;</span>
+    <img src="" alt="Imagen ampliada">
+    <p id="popup-message"></p>
+  </div>
+
+  <!-- Modal "Pirate Treasure" para el Sombrero de Luffy -->
+  <div id="pirate-modal" class="pirate-modal">
+    <!-- Paso 1 -->
+    <div id="pirate-content-step1" class="pirate-modal-content">
+      <span id="pirate-close" class="pirate-close">&times;</span>
+      <img src="images/tesoro.png" alt="Cofre del Tesoro" class="pirate-treasure">
+      <h2>¡Has descubierto mi tesoro!</h2>
+      <p>
+        Alysson, mi corazón es tuyo.<br>
+        Gracias por navegar conmigo cada día.<br>
+        ¿Listos para zarpar juntos?
+      </p>
+      <button id="pirate-next" class="btn">Siguiente</button>
+    </div>
+    <!-- Paso 2 -->
+    <div id="pirate-content-step2" class="pirate-modal-content" style="display: none;">
+      <span id="pirate-close2" class="pirate-close">&times;</span>
+      <img src="images/barco.png" alt="Barco Pirata" class="pirate-treasure">
+      <h2>¡Zarpemos!</h2>
+      <p>
+        Desde hoy, cada aventura será compartida.<br>
+        Cada tormenta, cada tesoro... lo viviremos juntos.<br>
+        Eres mi compañera de viaje, y no cambiaría nada.
+      </p>
+      <!-- Botón para mostrar la foto final -->
+      <button id="pirate-show-photo" class="btn">Zarpemos</button>
+      <!-- Foto final oculta inicialmente -->
+      <img id="pirate-final-photo" src="images/luffy-aly.jpeg" alt="Foto final">
+      <!-- Botón para cerrar el modal -->
+      <button id="pirate-close-button" class="btn" style="display: none;">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Ícono del Sombrero de Luffy -->
+  <div id="luffy-hat" title="Haz clic para descubrir un tesoro">
+    <img src="images/luffy-hat.png" alt="Sombrero de Luffy">
+  </div>
+
+  <!-- Script principal -->
+  <script src="js/script.js"></script>
+  <!-- Script para Confetti (Opcional) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnReiniciar = document.getElementById('btn-reiniciar');
+      btnReiniciar.addEventListener('click', () => {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
